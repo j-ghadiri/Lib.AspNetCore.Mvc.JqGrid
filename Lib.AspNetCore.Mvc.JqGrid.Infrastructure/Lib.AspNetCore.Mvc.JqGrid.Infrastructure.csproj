@@ -2,9 +2,9 @@
   <PropertyGroup>
     <Description>Common infrastructure for jqGrid support in ASP.NET Core.</Description>
     <Copyright>Copyright © 2016 - 2019 Tomasz Pęczek</Copyright>
-    <VersionPrefix>2.3.0</VersionPrefix>
+    <VersionPrefix>3.0.1</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <AssemblyName>Lib.AspNetCore.Mvc.JqGrid.Infrastructure</AssemblyName>
     <PackageId>Lib.AspNetCore.Mvc.JqGrid.Infrastructure</PackageId>
     <PackageTags>aspnetcore;aspnetcoremvc;jqgrid</PackageTags>
@@ -19,4 +19,5 @@
     <GenerateAssemblyProductAttribute>True</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCopyrightAttribute>True</GenerateAssemblyCopyrightAttribute>
   </PropertyGroup>
+   
 </Project>
