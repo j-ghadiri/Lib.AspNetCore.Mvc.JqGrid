@@ -59,7 +59,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
         {
             if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.PageIndex))
             {
-                model.PageIndex = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).FirstValue, CultureInfo.InvariantCulture) - 1;
+                //model.PageIndex = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).FirstValue, CultureInfo.InvariantCulture) - 1;
+                 model.PageIndex = Convert.ToInt32(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PageIndex).FirstValue) - 1;
             }
             else
             {
@@ -72,13 +73,16 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult pagesCountValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.PagesCount);
                 if (pagesCountValueResult != ValueProviderResult.None)
                 {
-                    model.PagesCount = ModelBindingHelper.ConvertTo<int>(pagesCountValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    //model.PagesCount = ModelBindingHelper.ConvertTo<int>(pagesCountValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    model.PagesCount = Convert.ToInt32(pagesCountValueResult.FirstValue);
                 }
             }
 
             if (!String.IsNullOrWhiteSpace(JqGridRequest.ParametersNames.RecordsCount))
             {
-                model.RecordsCount = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).FirstValue, CultureInfo.InvariantCulture);
+                //model.RecordsCount = ModelBindingHelper.ConvertTo<int>(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).FirstValue, CultureInfo.InvariantCulture);
+                model.RecordsCount = Convert.ToInt32(bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.RecordsCount).FirstValue);
+       
             }
 
             return model;
@@ -118,7 +122,8 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Request.ModelBinders
                 ValueProviderResult searchingValueResult = bindingContext.ValueProvider.GetValue(JqGridRequest.ParametersNames.Searching);
                 if (searchingValueResult != ValueProviderResult.None)
                 {
-                    model.Searching = ModelBindingHelper.ConvertTo<bool>(searchingValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    //model.Searching = ModelBindingHelper.ConvertTo<bool>(searchingValueResult.FirstValue, CultureInfo.InvariantCulture);
+                    model.Searching = Convert.ToBoolean(searchingValueResult.FirstValue);
                 }
             }
 
