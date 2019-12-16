@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Internal;
 
 namespace Lib.AspNetCore.Mvc.JqGrid.Core.Helpers
 {
@@ -9,13 +8,7 @@ namespace Lib.AspNetCore.Mvc.JqGrid.Core.Helpers
         {
             get
             {
-#if ASPNETCORE10 && !NETSTANDARD2_0
-                return TaskCache.CompletedTask;
-#elif NETSTANDARD2_0
                 return Task.CompletedTask;
-#else
-            // Not implemented, compiler break
-#endif
             }
         }
     }
